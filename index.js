@@ -115,8 +115,6 @@ Car.prototype.drive = function(distance) {
   }  
 }
 
-console.log(Car.drive(15));
-
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -124,11 +122,20 @@ console.log(Car.drive(15));
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
- 
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age);
+  this.favoriteToy = favoriteToy;
+  this.age = age;
+  this.name = name;
+}
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function() {
+  return `${this.name} is playing with a ${this.favoriteToy} being the favorite toy`
 }
 
+const even = new Baby('Even', 3, 'Nerf Gun');
 
+console.log(even.play());
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
