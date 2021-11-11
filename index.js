@@ -115,6 +115,11 @@ Car.prototype.drive = function(distance) {
   }  
 }
 
+const snoopsCar = new Car('Snoopra', 420);
+console.log(snoopsCar.fill('69'));
+console.log(snoopsCar.drive());
+
+
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -139,10 +144,10 @@ console.log(even.play());
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. When a constructor function is created pointing to the newly created object that is: new binding
+  2. when we use a .call, .apply, or .bind that is explicit binding
+  3. when none of the rules are being applied "this" will return a global object UNLESS told otherwise when defined in "strict mode," that is window binding
+  4. When a function is invoked and we look to the left of the dot to check for reference that is implicit binding
 */
 
 
